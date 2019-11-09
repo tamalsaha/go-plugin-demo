@@ -132,6 +132,7 @@ version:
 
 .PHONY: gen-protos
 gen-protos:
+	@rm -rf proto/*.pb.go
 	@docker run --rm                                       \
 		-u $$(id -u):$$(id -g)                             \
 		-v /tmp:/.cache                                    \
@@ -140,13 +141,7 @@ gen-protos:
 		--env HTTP_PROXY=$(HTTP_PROXY)                     \
 		--env HTTPS_PROXY=$(HTTPS_PROXY)                   \
 		$(BUILD_IMAGE)                                     \
-	    /bin/bash -c "                                     \
-			pushd proto;                                   \
-			rm -rf *.pb.go;                                \
-			protoc -I /usr/local/include -I .              \
-			     --go_out=plugins=grpc,${ALIAS}:. *.proto; \
-			popd;                                          \
-	    "
+		protoc -I proto/ proto/*.proto --go_out=plugins=grpc:proto/
 
 .PHONY: gen
 gen: gen-protos
