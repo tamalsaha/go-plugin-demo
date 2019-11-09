@@ -2,6 +2,7 @@ package shared
 
 import (
 	"github.com/tamalsaha/go-plugin-demo/proto"
+
 	"golang.org/x/net/context"
 )
 

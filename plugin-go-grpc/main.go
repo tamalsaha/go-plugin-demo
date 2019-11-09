@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/hashicorp/go-plugin"
 	"github.com/tamalsaha/go-plugin-demo/shared"
+
+	"github.com/hashicorp/go-plugin"
 )
 
 // Here is a real implementation of KV that writes to a local file with

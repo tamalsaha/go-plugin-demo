@@ -5,10 +5,10 @@ import (
 	"context"
 	"net/rpc"
 
-	"google.golang.org/grpc"
+	"github.com/tamalsaha/go-plugin-demo/proto"
 
 	"github.com/hashicorp/go-plugin"
-	"github.com/tamalsaha/go-plugin-demo/proto"
+	"google.golang.org/grpc"
 )
 
 // Handshake is a common handshake that is shared by plugin and host.

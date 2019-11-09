@@ -7,8 +7,9 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/hashicorp/go-plugin"
 	"github.com/tamalsaha/go-plugin-demo/shared"
+
+	"github.com/hashicorp/go-plugin"
 )
 
 func main() {
